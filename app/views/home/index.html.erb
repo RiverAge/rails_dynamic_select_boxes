@@ -1,0 +1,36 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<body>
+
+<%= collection_select(nil, :genre_id, @genres, :id, :name, {:prompt => 'Select a Genre'}, {:id => 'genres_select'}) %>
+<%= collection_select(nil, :artist_id, @artists, :id, :name, {:prompt => 'Select a Artist'}, {:id => 'artists_select'}) %>
+<%= collection_select(nil, :song_id, @songs, :id, :title, {:prompt => 'Select a Song'}, {:id => 'songs_select'}) %>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#genres_select').change(function () {
+            $.ajax({
+                url: "/update_artists",
+                data: {
+                    genre_id: $('#genres_select').val()
+                },
+                dataType: 'script'
+            });
+        });
+
+        $('#artists_select').change(function () {
+            $.ajax({
+                url: "/update_songs",
+                data: {
+                    artist_id: $('#artists_select').val()
+                },
+                dataType: 'script'
+            });
+        });
+    });
+
+
+</script>
+</body>
