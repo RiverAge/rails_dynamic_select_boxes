@@ -2,9 +2,9 @@
 <p>Find me in app/views/home/index.html.erb</p>
 <body>
 
-<%= collection_select(nil, :genre_id, @genres, :id, :name, {:prompt => 'Select a Genre'}, {:id => 'genres_select'}) %>
-<%= collection_select(nil, :artist_id, @artists, :id, :name, {:prompt => 'Select a Artist'}, {:id => 'artists_select'}) %>
-<%= collection_select(nil, :song_id, @songs, :id, :title, {:prompt => 'Select a Song'}, {:id => 'songs_select'}) %>
+<%= collection_select(nil, :genre_id, @genres, :id, :name, {prompt: 'Select a Genre'}, {:id => 'genres_select'}) %>
+<%= collection_select(nil, :artist_id, @artists, :id, :name, {prompt: false},{:id => 'artists_select'}) %>
+<%= collection_select(nil, :song_id, @songs, :id, :title, {prompt: false},{:id => 'songs_select'}) %>
 
 
 
